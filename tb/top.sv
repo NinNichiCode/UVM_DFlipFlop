@@ -13,15 +13,18 @@ module top;
     end
 
     initial begin
-       rst = 1;
+       
+       rst = 0;
        #10;
+       rst = 1;
+       #60;
        rst = 0;
     end
 
-  dff_if vif(clk, rst);
+  dff_if vif();
 
-   // assign vif.clk = clk;
-   //   assign vif.rst = rst;
+   assign vif.clk = clk;
+   assign vif.rst = rst;
 
     dff dut (.clk(vif.clk), .rst(vif.rst), .din(vif.din), .dout(vif.dout));
 

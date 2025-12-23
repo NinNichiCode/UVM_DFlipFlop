@@ -9,19 +9,25 @@ INCDIRS = +incdir+$(UVC_DIR)/env +incdir+$(UVC_DIR)/seq	+incdir+$(UVC_DIR)/tests
 
 TESTS = dff_test
 
-all: compile regress summary
+all: compile regress coverage summary
 
 compile: 
 	vlib $(LIB)
 	vmap work $(LIB)
-	vlog -work work -sv $(TB_DIR)/dff_if.sv  $(RTL_DIR)/dff.v
-	vlog -work work -sv $(UVC_DIR)/env/dff_pkg.sv
-	vlog -work work -sv $(TB_DIR)/top.sv 
+	vlog -work work -sv -cover bcetf $(TB_DIR)/dff_if.sv  $(RTL_DIR)/dff.v
+	vlog -work work -sv -cover bcetf $(UVC_DIR)/env/dff_pkg.sv
+	vlog -work work -sv -cover bcetf $(TB_DIR)/top.sv 
 regress:
 	@mkdir -p logs
+	@mkdir -p cov
 	@for t in $(TESTS); do \
-	vsim -c top +UVM_TESTNAME=$$t -l logs/$$t.log -do "run -all; quit -f"; \
+	vsim -c -coverage top +UVM_TESTNAME=$$t -voptargs="+acc" -l logs/$$t.log -do " coverage save -onexit cov/$$t.ucdb; run -all; quit"; \
 	done
+
+coverage:
+	@echo "Generate coverage report..."
+	vcover report -html cov/dff_test.ucdb -htmldir cov/html
+	vcover report -detail -file cov/coverage.txt cov/dff_test.ucdb
 
 summary:
 	@echo "PASS"
@@ -32,9 +38,9 @@ summary:
 	@echo ""
 
 clean:
-	rm -rf $(LIB) transcript logs *.log modelsim.ini
+	rm -rf $(LIB) transcript logs *.log cov modelsim.ini
 
-.PHONY: all compile regress summary clean
+.PHONY: all compile regress coverage summary clean
 
 	
 

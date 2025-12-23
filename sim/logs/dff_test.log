@@ -1,6 +1,6 @@
-# vsim -c top "+UVM_TESTNAME=dff_test" -l logs/dff_test.log -do "run -all; quit -f" 
-# Start time: 15:07:18 on Dec 17,2025
-# ** Note: (vsim-3812) Design is being optimized...
+# vsim -c -coverage top "+UVM_TESTNAME=dff_test" -voptargs="+acc" -l logs/dff_test.log -do " coverage save -onexit cov/dff_test.ucdb; run -all; quit" 
+# Start time: 04:12:34 on Dec 22,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # //  Questa Sim-64
 # //  Version 10.7c win64 Aug 18 2018
 # //
@@ -21,9 +21,12 @@
 # Loading work.dff_pkg(fast)
 # Loading work.top_sv_unit(fast)
 # Loading work.top(fast)
+# Loading work.dff_if(fast)
+# Loading work.dff(fast)
 # Loading mtiUvm.questa_uvm_pkg(fast)
 # Loading D:/questasim_b_install/uvm-1.1d\win64\uvm_dpi.dll
-# run -all
+#  coverage save -onexit cov/dff_test.ucdb
+#  run -all
 # ----------------------------------------------------------------
 # UVM-1.1d
 # (C) 2007-2013 Mentor Graphics Corporation
@@ -48,78 +51,353 @@
 # UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(216) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
 # UVM_INFO @ 0: reporter [RNTST] Running test dff_test...
 # UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
-# ------------------------------------------------------------------
-# Name                       Type                        Size  Value
-# ------------------------------------------------------------------
-# uvm_test_top               dff_test                    -     @471 
-#   env                      dff_env                     -     @478 
-#     agent                  dff_agent                   -     @485 
-#       driver               dff_driver                  -     @594 
-#         rsp_port           uvm_analysis_port           -     @609 
-#         seq_item_port      uvm_seq_item_pull_port      -     @601 
-#       golden_model         dff_golden                  -     @632 
-#         item_golden_port   uvm_analysis_port           -     @639 
-#       monitor              dff_monitor                 -     @617 
-#         item_send_port     uvm_analysis_port           -     @624 
-#       seqr                 uvm_sequencer               -     @647 
-#         rsp_export         uvm_analysis_export         -     @654 
-#         seq_item_export    uvm_seq_item_pull_imp       -     @748 
-#         arbitration_queue  array                       0     -    
-#         lock_queue         array                       0     -    
-#         num_last_reqs      integral                    32    'd1  
-#         num_last_rsps      integral                    32    'd1  
-#     scoreboard             dff_scoreboard              -     @492 
-#       item_golden_imp      uvm_tlm_analysis_fifo #(T)  -     @546 
-#         analysis_export    uvm_analysis_imp            -     @585 
-#         get_ap             uvm_analysis_port           -     @577 
-#         get_peek_export    uvm_get_peek_imp            -     @561 
-#         put_ap             uvm_analysis_port           -     @569 
-#         put_export         uvm_put_imp                 -     @553 
-#       item_got_imp         uvm_tlm_analysis_fifo #(T)  -     @499 
-#         analysis_export    uvm_analysis_imp            -     @538 
-#         get_ap             uvm_analysis_port           -     @530 
-#         get_peek_export    uvm_get_peek_imp            -     @514 
-#         put_ap             uvm_analysis_port           -     @522 
-#         put_export         uvm_put_imp                 -     @506 
-# ------------------------------------------------------------------
+# ---------------------------------------------------------------
+# Name                       Type                     Size  Value
+# ---------------------------------------------------------------
+# uvm_test_top               dff_test                 -     @471 
+#   env                      dff_env                  -     @478 
+#     agent                  dff_agent                -     @485 
+#       driver               dff_driver               -     @531 
+#         rsp_port           uvm_analysis_port        -     @546 
+#         seq_item_port      uvm_seq_item_pull_port   -     @538 
+#       golden_model         dff_golden               -     @569 
+#         item_golden_port   uvm_analysis_port        -     @576 
+#       monitor              dff_monitor              -     @554 
+#         item_send_port     uvm_analysis_port        -     @561 
+#       seqr                 uvm_sequencer            -     @584 
+#         rsp_export         uvm_analysis_export      -     @591 
+#         seq_item_export    uvm_seq_item_pull_imp    -     @685 
+#         arbitration_queue  array                    0     -    
+#         lock_queue         array                    0     -    
+#         num_last_reqs      integral                 32    'd1  
+#         num_last_rsps      integral                 32    'd1  
+#     cov                    dff_coverage             -     @515 
+#       analysis_imp         uvm_analysis_imp         -     @522 
+#     scoreboard             dff_scoreboard           -     @492 
+#       item_dut_imp         uvm_analysis_imp_dut     -     @499 
+#       item_golden_imp      uvm_analysis_imp_golden  -     @507 
+# ---------------------------------------------------------------
 # 
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 5000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 15000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 25000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 35000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 45000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 55000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 65000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 75000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 85000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 95000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 105000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 115000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 125000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 135000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 145000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 155000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 165000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 175000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 185000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 195000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 205000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 215000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 225000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 235000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 245000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 255000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 265000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 275000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 285000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
-# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(27) @ 295000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
-# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 295000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-# UVM_INFO ..\uvc\env\..\tests\base_test.sv(44) @ 295000: uvm_test_top [BASE_TEST] ** TEST PASSED **
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 5000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 15000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 25000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 35000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 45000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 55000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 65000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 75000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 85000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 95000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 105000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 115000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 125000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 135000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 145000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 155000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 165000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 175000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 185000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 195000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 205000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 215000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 225000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 235000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 245000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 255000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 265000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 275000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 285000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 295000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 305000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 315000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 325000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 335000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 345000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 355000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 365000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 375000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 385000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 395000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 405000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 415000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 425000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 435000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 445000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 455000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 465000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 475000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 485000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 495000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 505000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 515000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 525000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 535000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 545000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 555000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 565000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 575000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 585000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 595000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 605000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 615000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 625000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 635000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 645000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 655000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 665000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 675000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 685000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 695000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 705000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 715000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 725000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 735000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 745000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 755000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 765000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 775000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 785000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 795000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 805000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 815000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 825000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 835000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 845000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 855000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 865000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 875000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 885000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 895000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 905000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 915000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 925000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 935000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 945000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 955000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 965000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 975000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 985000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 995000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1005000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1015000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1025000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1035000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1045000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1055000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1065000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1075000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1085000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1095000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1105000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1115000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1125000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1135000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1145000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1155000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1165000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1175000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1185000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1195000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1205000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1215000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1225000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1235000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1245000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1255000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1265000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1275000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1285000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1295000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1305000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1315000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1325000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1335000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1345000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1355000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1365000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1375000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1385000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1395000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1405000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1415000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1425000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1435000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1445000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1455000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1465000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1475000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1485000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1495000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1505000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1515000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1525000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1535000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1545000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1555000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1565000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1575000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1585000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1595000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1605000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1615000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1625000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1635000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1645000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1655000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1665000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1675000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1685000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1695000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1705000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1715000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1725000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1735000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1745000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1755000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1765000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1775000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1785000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1795000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1805000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1815000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1825000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1835000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1845000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1855000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1865000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1875000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1885000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1895000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1905000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1915000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1925000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1935000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1945000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1955000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1965000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1975000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1985000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 1995000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2005000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2015000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2025000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2035000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2045000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2055000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2065000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2075000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2085000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2095000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2105000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2115000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2125000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2135000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2145000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2155000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2165000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2175000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2185000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2195000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2205000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2215000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2225000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2235000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2245000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2255000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2265000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2275000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2285000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2295000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2305000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2315000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2325000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2335000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2345000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2355000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2365000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2375000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2385000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2395000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2405000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2415000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2425000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2435000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2445000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2455000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2465000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2475000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2485000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2495000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2505000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2515000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2525000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2535000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2545000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2555000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2565000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2575000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2585000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2595000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2605000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2615000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2625000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2635000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2645000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2655000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2665000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2675000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2685000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2695000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2705000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2715000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2725000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2735000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2745000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2755000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2765000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2775000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2785000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2795000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2805000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2815000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2825000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2835000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2845000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2855000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2865000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2875000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2885000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2895000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2905000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2915000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2925000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2935000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2945000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2955000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2965000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2975000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2985000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 2995000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 0 | golden_din = 0, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 3005000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 3015000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 3025000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 3035000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 3045000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 3055000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 0 , dout = 1 | golden_din = 0, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 3065000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 0 | golden_din = 1, golden_dout = 0
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 3075000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 3085000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(47) @ 3095000: uvm_test_top.env.scoreboard [SCO]  Pass , din = 1 , dout = 1 | golden_din = 1, golden_dout = 1
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 3095000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# ======================================================================
+# UVM_INFO ..\uvc\env\.\dff_scoreboard.sv(59) @ 3095000: uvm_test_top.env.scoreboard [SCO_report] pass = 310, fail = 0
+# ======================================================================
+# UVM_INFO ..\uvc\env\..\tests\base_test.sv(44) @ 3095000: uvm_test_top [BASE_TEST] ** TEST PASSED **
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :   36
+# UVM_INFO :  317
 # UVM_WARNING :    0
 # UVM_ERROR :    0
 # UVM_FATAL :    0
@@ -127,10 +405,12 @@
 # [BASE_TEST]     1
 # [Questa UVM]     2
 # [RNTST]     1
-# [SCO]    30
+# [SCO]   310
+# [SCO_report]     1
 # [TEST_DONE]     1
 # [UVMTOP]     1
 # ** Note: $finish    : D:/questasim_b_install/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 295 ns  Iteration: 61  Instance: /top
-# End time: 15:07:24 on Dec 17,2025, Elapsed time: 0:00:06
+#    Time: 3095 ns  Iteration: 62  Instance: /top
+# Saving coverage database on exit...
+# End time: 04:12:40 on Dec 22,2025, Elapsed time: 0:00:06
 # Errors: 0, Warnings: 0

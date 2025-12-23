@@ -1,8 +1,7 @@
 class dff_item extends uvm_sequence_item;
   //  `uvm_object_utils(dff_item)
 
-
-  //  rand bit reset;
+   rand bit rst;
    rand bit data_in;
     
    bit data_out; 

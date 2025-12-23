@@ -20,18 +20,24 @@ class dff_golden extends uvm_monitor;
 
     function void predict();
     //    transaction.data_out = transaction.data_in;
-             transaction.data_out = prev_din;
+         if(transaction.rst) begin
+		transaction.data_out = 1'b0;
+	 end else begin
+   
+        transaction.data_out = prev_din;
        
        // Cập nhật Input nhịp này vào biến nhớ để dùng cho nhịp sau
        prev_din = transaction.data_in;
+       end
        
 endfunction
 
     virtual task run_phase(uvm_phase phase);
        forever begin
-           @(posedge vif.clk);
+           @(posedge vif.mon_cb);
               transaction = dff_item::type_id::create("transaction",this);
-                transaction.data_in = vif.din;
+                transaction.rst = vif.mon_cb.rst;
+	        transaction.data_in = vif.mon_cb.din;
                 predict();
                 item_golden_port.write(transaction);
        end

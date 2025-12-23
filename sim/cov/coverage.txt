@@ -1,0 +1,790 @@
+Coverage Report by file with details
+
+=================================================================================
+=== File: ..//dff.v
+=================================================================================
+Branch Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Branches                         2         2         0    100.00
+
+================================Branch Details================================
+
+Branch Coverage for file ..//dff.v --
+
+------------------------------------IF Branch------------------------------------
+    10                                       242     Count coming in to IF
+    10              1                          4           if(rst)
+    12              1                        238           else
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Toggle Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Toggle Bins                      8         8         0    100.00
+
+================================Toggle Details================================
+
+Toggle Coverage for File ..//dff.v --
+
+       Line                                   Node      1H->0L      0L->1H  "Coverage"
+--------------------------------------------------------------------------------------
+
+Total Node Count     =          4 
+Toggled Node Count   =          4 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (8 of 8 bins)
+
+=================================================================================
+=== File: ../tb/dff_if.sv
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Toggle Bins                      8         8         0    100.00
+
+================================Toggle Details================================
+
+Toggle Coverage for File ../tb/dff_if.sv --
+
+       Line                                   Node      1H->0L      0L->1H  "Coverage"
+--------------------------------------------------------------------------------------
+
+Total Node Count     =          4 
+Toggled Node Count   =          4 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (8 of 8 bins)
+
+=================================================================================
+=== File: ../tb/top.sv
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Toggle Bins                      4         4         0    100.00
+
+================================Toggle Details================================
+
+Toggle Coverage for File ../tb/top.sv --
+
+       Line                                   Node      1H->0L      0L->1H  "Coverage"
+--------------------------------------------------------------------------------------
+
+Total Node Count     =          2 
+Toggled Node Count   =          2 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (4 of 4 bins)
+
+=================================================================================
+=== File: ../uvc/env/../seq/dff_item.sv
+=================================================================================
+Branch Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Branches                        52         9        43     17.30
+
+================================Branch Details================================
+
+Branch Coverage for file ../uvc/env/../seq/dff_item.sv --
+
+------------------------------------IF Branch------------------------------------
+    9                                    ***0***     Count coming in to IF
+    9               1                    ***0***          `uvm_object_utils_begin(dff_item)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    9                                        310     Count coming in to IF
+    9               2                    ***0***          `uvm_object_utils_begin(dff_item)
+                                             310     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    9                                    ***0***     Count coming in to IF
+    9               3                    ***0***          `uvm_object_utils_begin(dff_item)
+    9               4                    ***0***          `uvm_object_utils_begin(dff_item)
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    9                                        310     Count coming in to IF
+    9               5                        310          `uvm_object_utils_begin(dff_item)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    9                                        310     Count coming in to IF
+    9               6                    ***0***          `uvm_object_utils_begin(dff_item)
+                                             310     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------CASE Branch------------------------------------
+    11                                       310     Count coming in to CASE
+    11              2                    ***0***           `uvm_field_int(data_in, UVM_DEFAULT)
+    11              3                    ***0***     
+    11              5                        310     
+    11              9                    ***0***     
+    11             10                    ***0***     
+    11             11                    ***0***     
+    11             12                    ***0***     
+    11             13                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 9 branches = 11.11%
+
+------------------------------------IF Branch------------------------------------
+    11                                   ***0***     Count coming in to IF
+    11              4                    ***0***           `uvm_field_int(data_in, UVM_DEFAULT)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    11                                       310     Count coming in to IF
+    11              6                    ***0***           `uvm_field_int(data_in, UVM_DEFAULT)
+                                             310     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    11                                       310     Count coming in to IF
+    11              7                    ***0***           `uvm_field_int(data_in, UVM_DEFAULT)
+                                             310     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    11                                   ***0***     Count coming in to IF
+    11              8                    ***0***           `uvm_field_int(data_in, UVM_DEFAULT)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    11                                   ***0***     Count coming in to IF
+    11             14                    ***0***           `uvm_field_int(data_in, UVM_DEFAULT)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    11                                   ***0***     Count coming in to IF
+    11             15                    ***0***           `uvm_field_int(data_in, UVM_DEFAULT)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------CASE Branch------------------------------------
+    12                                       310     Count coming in to CASE
+    12              2                    ***0***           `uvm_field_int(data_out, UVM_DEFAULT)
+    12              3                    ***0***     
+    12              5                        310     
+    12              9                    ***0***     
+    12             10                    ***0***     
+    12             11                    ***0***     
+    12             12                    ***0***     
+    12             13                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 9 branches = 11.11%
+
+------------------------------------IF Branch------------------------------------
+    12                                   ***0***     Count coming in to IF
+    12              4                    ***0***           `uvm_field_int(data_out, UVM_DEFAULT)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    12                                       310     Count coming in to IF
+    12              6                    ***0***           `uvm_field_int(data_out, UVM_DEFAULT)
+                                             310     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    12                                       310     Count coming in to IF
+    12              7                    ***0***           `uvm_field_int(data_out, UVM_DEFAULT)
+                                             310     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    12                                   ***0***     Count coming in to IF
+    12              8                    ***0***           `uvm_field_int(data_out, UVM_DEFAULT)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    12                                   ***0***     Count coming in to IF
+    12             14                    ***0***           `uvm_field_int(data_out, UVM_DEFAULT)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    12                                   ***0***     Count coming in to IF
+    12             15                    ***0***           `uvm_field_int(data_out, UVM_DEFAULT)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Condition Coverage:
+    Enabled Coverage            Active   Covered    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FEC Condition Terms             10         0        10      0.00
+
+================================Condition Details================================
+
+Condition Coverage for file ../uvc/env/../seq/dff_item.sv --
+
+----------------Focused Condition View-------------------
+Line       9 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       9 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:          1  (tmp_data__ != null)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       11 Item    1  (local_data__ == null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+              Input Term   Covered  Reason for no coverage   Hint
+             -----------  --------  -----------------------  --------------
+  (local_data__ == null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                Non-masking condition(s)      
+ ---------  ---------  --------------------      -------------------------     
+  Row   1:    ***0***  (local_data__ == null)_0  -                             
+  Row   2:    ***0***  (local_data__ == null)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       11 Item    2  (local_data__ == null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+              Input Term   Covered  Reason for no coverage   Hint
+             -----------  --------  -----------------------  --------------
+  (local_data__ == null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                Non-masking condition(s)      
+ ---------  ---------  --------------------      -------------------------     
+  Row   1:          1  (local_data__ == null)_0  -                             
+  Row   2:    ***0***  (local_data__ == null)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       11 Item    3  (this.data_in !== local_data__.data_in)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                               Input Term   Covered  Reason for no coverage   Hint
+                              -----------  --------  -----------------------  --------------
+  (this.data_in !== local_data__.data_in)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                                 Non-masking condition(s)      
+ ---------  ---------  --------------------                       -------------------------     
+  Row   1:          1  (this.data_in !== local_data__.data_in)_0  -                             
+  Row   2:    ***0***  (this.data_in !== local_data__.data_in)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       11 Item    4  (__m_uvm_status_container.comparer.result && (__m_uvm_status_container.comparer.show_max <= __m_uvm_status_container.comparer.result))
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                                                                                                                              Input Term   Covered  Reason for no coverage   Hint
+                                                                                                                             -----------  --------  -----------------------  --------------
+  (__m_uvm_status_container.comparer.result && (__m_uvm_status_container.comparer.show_max <= __m_uvm_status_container.comparer.result))         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                                                                                                                                Non-masking condition(s)      
+ ---------  ---------  --------------------                                                                                                                      -------------------------     
+  Row   1:    ***0***  (__m_uvm_status_container.comparer.result && (__m_uvm_status_container.comparer.show_max <= __m_uvm_status_container.comparer.result))_0  -                             
+  Row   2:    ***0***  (__m_uvm_status_container.comparer.result && (__m_uvm_status_container.comparer.show_max <= __m_uvm_status_container.comparer.result))_1  -                             
+
+----------------Focused Condition View-------------------
+Line       12 Item    1  (local_data__ == null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+              Input Term   Covered  Reason for no coverage   Hint
+             -----------  --------  -----------------------  --------------
+  (local_data__ == null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                Non-masking condition(s)      
+ ---------  ---------  --------------------      -------------------------     
+  Row   1:    ***0***  (local_data__ == null)_0  -                             
+  Row   2:    ***0***  (local_data__ == null)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       12 Item    2  (local_data__ == null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+              Input Term   Covered  Reason for no coverage   Hint
+             -----------  --------  -----------------------  --------------
+  (local_data__ == null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                Non-masking condition(s)      
+ ---------  ---------  --------------------      -------------------------     
+  Row   1:          1  (local_data__ == null)_0  -                             
+  Row   2:    ***0***  (local_data__ == null)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       12 Item    3  (this.data_out !== local_data__.data_out)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                                 Input Term   Covered  Reason for no coverage   Hint
+                                -----------  --------  -----------------------  --------------
+  (this.data_out !== local_data__.data_out)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                                   Non-masking condition(s)      
+ ---------  ---------  --------------------                         -------------------------     
+  Row   1:          1  (this.data_out !== local_data__.data_out)_0  -                             
+  Row   2:    ***0***  (this.data_out !== local_data__.data_out)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       12 Item    4  (__m_uvm_status_container.comparer.result && (__m_uvm_status_container.comparer.show_max <= __m_uvm_status_container.comparer.result))
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                                                                                                                              Input Term   Covered  Reason for no coverage   Hint
+                                                                                                                             -----------  --------  -----------------------  --------------
+  (__m_uvm_status_container.comparer.result && (__m_uvm_status_container.comparer.show_max <= __m_uvm_status_container.comparer.result))         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                                                                                                                                Non-masking condition(s)      
+ ---------  ---------  --------------------                                                                                                                      -------------------------     
+  Row   1:    ***0***  (__m_uvm_status_container.comparer.result && (__m_uvm_status_container.comparer.show_max <= __m_uvm_status_container.comparer.result))_0  -                             
+  Row   2:    ***0***  (__m_uvm_status_container.comparer.result && (__m_uvm_status_container.comparer.show_max <= __m_uvm_status_container.comparer.result))_1  -                             
+
+
+
+=================================================================================
+=== File: ../uvc/env/../seq/dff_seq.sv
+=================================================================================
+Branch Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Branches                        26         6        20     23.07
+
+================================Branch Details================================
+
+Branch Coverage for file ../uvc/env/../seq/dff_seq.sv --
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               1                    ***0***        `uvm_object_utils(dff_seq);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               2                    ***0***        `uvm_object_utils(dff_seq);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               3                    ***0***        `uvm_object_utils(dff_seq);
+    2               4                    ***0***        `uvm_object_utils(dff_seq);
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               5                    ***0***        `uvm_object_utils(dff_seq);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    2                                    ***0***     Count coming in to IF
+    2               6                    ***0***        `uvm_object_utils(dff_seq);
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    13                                        10     Count coming in to IF
+    13              1                         10              `uvm_do_with(req, {
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    13                                        10     Count coming in to IF
+    13              2                    ***0***              `uvm_do_with(req, {
+                                              10     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    13                                   ***0***     Count coming in to IF
+    13              3                    ***0***              `uvm_do_with(req, {
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    13                                        10     Count coming in to IF
+    13              4                         10              `uvm_do_with(req, {
+    13              5                    ***0***              `uvm_do_with(req, {
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                       300     Count coming in to IF
+    20              1                        300             `uvm_do(req); 
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                       300     Count coming in to IF
+    20              2                    ***0***             `uvm_do(req); 
+                                             300     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                   ***0***     Count coming in to IF
+    20              3                    ***0***             `uvm_do(req); 
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                       300     Count coming in to IF
+    20              4                        300             `uvm_do(req); 
+    20              5                    ***0***             `uvm_do(req); 
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Condition Coverage:
+    Enabled Coverage            Active   Covered    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FEC Condition Terms              2         0         2      0.00
+
+================================Condition Details================================
+
+Condition Coverage for file ../uvc/env/../seq/dff_seq.sv --
+
+----------------Focused Condition View-------------------
+Line       2 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       2 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+
+=================================================================================
+=== File: ../uvc/env/../tests/base_test.sv
+=================================================================================
+Branch Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Branches                         8         2         6     25.00
+
+================================Branch Details================================
+
+Branch Coverage for file ../uvc/env/../tests/base_test.sv --
+
+------------------------------------IF Branch------------------------------------
+    28                                   ***0***     Count coming in to IF
+    28              1                    ***0***         `uvm_fatal("base_test", "cannot access sequence")
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    43                                         1     Count coming in to IF
+    43              1                          1           if (error_cnt == 0) 
+    45              1                    ***0***           else 
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    44                                         1     Count coming in to IF
+    44              1                          1     	  `uvm_info("BASE_TEST", "** TEST PASSED **", UVM_MEDIUM)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    46                                   ***0***     Count coming in to IF
+    46              1                    ***0***     	  `uvm_error("BASE_TEST", "** TEST FAILED **")
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Condition Coverage:
+    Enabled Coverage            Active   Covered    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FEC Condition Terms              1         0         1      0.00
+
+================================Condition Details================================
+
+Condition Coverage for file ../uvc/env/../tests/base_test.sv --
+
+----------------Focused Condition View-------------------
+Line       43 Item    1  (error_cnt == 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+        Input Term   Covered  Reason for no coverage   Hint
+       -----------  --------  -----------------------  --------------
+  (error_cnt == 0)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (error_cnt == 0)_0    -                             
+  Row   2:          1  (error_cnt == 0)_1    -                             
+
+
+
+=================================================================================
+=== File: ../uvc/env/./dff_driver.sv
+=================================================================================
+Branch Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Branches                         4         1         3     25.00
+
+================================Branch Details================================
+
+Branch Coverage for file ../uvc/env/./dff_driver.sv --
+
+------------------------------------IF Branch------------------------------------
+    15                                         1     Count coming in to IF
+    15              1                    ***0***          if(!uvm_config_db#(virtual dff_if)::get(this,"","vif", vif))
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    16                                   ***0***     Count coming in to IF
+    16              1                    ***0***     	`uvm_fatal("DRV", "Cannot access interface")
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+
+=================================================================================
+=== File: ../uvc/env/./dff_golden.sv
+=================================================================================
+Branch Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Branches                         6         3         3     50.00
+
+================================Branch Details================================
+
+Branch Coverage for file ../uvc/env/./dff_golden.sv --
+
+------------------------------------IF Branch------------------------------------
+    16                                         1     Count coming in to IF
+    16              1                    ***0***             if(!uvm_config_db#(virtual dff_if)::get(this, "", "vif", vif))
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    17                                   ***0***     Count coming in to IF
+    17              1                    ***0***                 `uvm_fatal("NOVIF", "cannot get vif")
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    23                                       310     Count coming in to IF
+    23              1                          6              if(transaction.rst) begin
+    25              1                        304     	 end else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+
+=================================================================================
+=== File: ../uvc/env/./dff_monitor.sv
+=================================================================================
+Branch Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Branches                         4         1         3     25.00
+
+================================Branch Details================================
+
+Branch Coverage for file ../uvc/env/./dff_monitor.sv --
+
+------------------------------------IF Branch------------------------------------
+    17                                         1     Count coming in to IF
+    17              1                    ***0***         if (!uvm_config_db#(virtual dff_if)::get(this, "", "vif", vif))
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    18                                   ***0***     Count coming in to IF
+    18              1                    ***0***     	 `uvm_fatal("MON", "cannot access interface");
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+
+=================================================================================
+=== File: ../uvc/env/./dff_scoreboard.sv
+=================================================================================
+Branch Coverage:
+    Enabled Coverage            Active      Hits    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    Branches                        10         5         5     50.00
+
+================================Branch Details================================
+
+Branch Coverage for file ../uvc/env/./dff_scoreboard.sv --
+
+------------------------------------IF Branch------------------------------------
+    42                                       620     Count coming in to IF
+    42              1                        310           if(dut_q.size() > 0 && golden_q.size >0) begin
+                                             310     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    46                                       310     Count coming in to IF
+    46              1                        310             if(tr.compare(golden_tr)) begin
+    49              1                    ***0***     	 end else begin 
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    47                                       310     Count coming in to IF
+    47              1                        310               `uvm_info("SCO", $sformatf(" Pass , din = %0h , dout = %0h | golden_din = %0h, golden_dout = %0h", tr.data_in, tr.data_out, golden_tr.data_in, golden_tr.data_out), UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    50                                   ***0***     Count coming in to IF
+    50              1                    ***0***                `uvm_error("SCO", $sformatf(" Fail, din = %0h , dout = %0h | golden_din = %0h, golden_dout = %0h", tr.data_in, tr.data_out, golden_tr.data_in, golden_tr.data_out))
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    59                                         1     Count coming in to IF
+    59              1                          1     	 `uvm_info("SCO_report", $sformatf("pass = %0d, fail = %0d", pass, fail), UVM_NONE)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Condition Coverage:
+    Enabled Coverage            Active   Covered    Misses % Covered
+    ----------------            ------      ----    ------ ---------
+    FEC Condition Terms              2         2         0    100.00
+
+================================Condition Details================================
+
+Condition Coverage for file ../uvc/env/./dff_scoreboard.sv --
+
+----------------Focused Condition View-------------------
+Line       42 Item    1  ((size(this.dut_q) > 0) && (size(this.golden_q) > 0))
+Condition totals: 2 of 2 input terms covered = 100.00%
+
+
+
+COVERGROUP COVERAGE:
+-----------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal    Status               
+                                                                                              
+-----------------------------------------------------------------------------------------------
+ TYPE /dff_pkg/dff_coverage/cov_inst                  100.00%        100    Covered              
+    covered/total bins:                                    19         19                      
+    missing/total bins:                                     0         19                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint cov_inst::CP_RST                       100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+    Coverpoint cov_inst::CP_RST_TRANS                 100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+    Coverpoint cov_inst::CP_DIN                       100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+    Coverpoint cov_inst::CP_DIN_TRANS                 100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+    Coverpoint cov_inst::CP_DOUT                      100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+    Cross cov_inst::X_RST_PRIORITY                    100.00%        100    Covered              
+        covered/total bins:                                 5          5                      
+        missing/total bins:                                 0          5                      
+        % Hit:                                        100.00%        100                      
+    Cross cov_inst::DATAPATH                          100.00%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                        100.00%        100                      
+ Covergroup instance \/dff_pkg::dff_coverage::cov_inst  
+                                                      100.00%        100    Covered              
+    covered/total bins:                                    19         19                      
+    missing/total bins:                                     0         19                      
+    % Hit:                                            100.00%        100                      
+    Coverpoint CP_RST                                 100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin auto[0]                                       304          1    Covered              
+        bin auto[1]                                         6          1    Covered              
+    Coverpoint CP_RST_TRANS                           100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin active_deactive[0=>1]                           1          1    Covered              
+        bin active_deactive[1=>0]                           1          1    Covered              
+    Coverpoint CP_DIN                                 100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin auto[0]                                       166          1    Covered              
+        bin auto[1]                                       144          1    Covered              
+    Coverpoint CP_DIN_TRANS                           100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin data_toggling[0=>1]                            81          1    Covered              
+        bin data_toggling[1=>0]                            80          1    Covered              
+    Coverpoint CP_DOUT                                100.00%        100    Covered              
+        covered/total bins:                                 2          2                      
+        missing/total bins:                                 0          2                      
+        % Hit:                                        100.00%        100                      
+        bin auto[0]                                       170          1    Covered              
+        bin auto[1]                                       140          1    Covered              
+    Cross X_RST_PRIORITY                              100.00%        100    Covered              
+        covered/total bins:                                 5          5                      
+        missing/total bins:                                 0          5                      
+        % Hit:                                        100.00%        100                      
+        bin <auto[0],auto[0],auto[0]>                      85          1    Covered              
+        bin <auto[0],auto[0],auto[1]>                      78          1    Covered              
+        bin <auto[0],auto[1],auto[0]>                      79          1    Covered              
+        bin <auto[0],auto[1],auto[1]>                      62          1    Covered              
+        illegal_bin rst_fail                                0               ZERO                 
+        bin reset_priority                                  6          1    Covered              
+    Cross DATAPATH                                    100.00%        100    Covered              
+        covered/total bins:                                 4          4                      
+        missing/total bins:                                 0          4                      
+        % Hit:                                        100.00%        100                      
+        bin <auto[0],auto[0],auto[1]>                      78          1    Covered              
+        bin <auto[0],auto[1],auto[0]>                      79          1    Covered              
+        ignore_bin rst_on                                   6               Occurred             
+        bin path_0                                         85          1    Covered              
+        bin path_1                                         62          1    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+Total Coverage By File (code coverage only, filtered view): 46.40%
+

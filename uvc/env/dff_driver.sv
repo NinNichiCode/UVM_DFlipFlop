@@ -19,9 +19,14 @@ class dff_driver extends uvm_driver#(dff_item);
   virtual task run_phase(uvm_phase phase);
      forever begin
        seq_item_port.get_next_item(transaction);
-       @(posedge vif.clk);
-        
-    	 vif.din <= transaction.data_in;
+       @(vif.drv_cb);
+         
+//      if (vif.drv_cb.rst) begin
+//        vif.drv_cb.din <= 0;
+//         seq_item_port.item_done();
+//        continue;
+//      end
+  	 vif.drv_cb.din <= transaction.data_in;
 
        seq_item_port.item_done();
      end

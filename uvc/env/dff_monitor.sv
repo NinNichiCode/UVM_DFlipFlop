@@ -21,14 +21,12 @@ class dff_monitor extends uvm_monitor;
   virtual task run_phase(uvm_phase phase);
     forever begin 
       
-    // transaction = dff_item::type_id::create("transaction");
-      repeat(1) @(posedge vif.clk);
-      // #1; 
-       transaction.data_in = vif.din;
+      repeat(1) @(posedge vif.mon_cb);
+       transaction.rst = vif.mon_cb.rst;
+ 
+       transaction.data_in = vif.mon_cb.din;
        
-      // repeat(1) @(posedge vif.clk);
-      // #1;
-      transaction.data_out = vif.dout;
+      transaction.data_out = vif.mon_cb.dout;
        item_send_port.write(transaction);
     end
   endtask

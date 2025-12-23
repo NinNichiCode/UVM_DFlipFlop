@@ -10,6 +10,7 @@ package dff_pkg;
   `include "./dff_agent.sv"
 
   `include "./dff_scoreboard.sv"
+  `include "./dff_coverage.sv"
   `include "./dff_env.sv"
 
   `include "../seq/dff_seq.sv"

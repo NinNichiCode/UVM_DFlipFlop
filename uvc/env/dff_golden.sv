@@ -23,11 +23,9 @@ class dff_golden extends uvm_monitor;
          if(transaction.rst) begin
 		transaction.data_out = 1'b0;
 	 end else begin
-   
         transaction.data_out = prev_din;
        
-       // Cập nhật Input nhịp này vào biến nhớ để dùng cho nhịp sau
-       prev_din = transaction.data_in;
+        prev_din = transaction.data_in;
        end
        
 endfunction

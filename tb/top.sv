@@ -21,9 +21,10 @@ module top;
        rst = 0;
     end
 
-  dff_if vif();
+    dff_if vif(clk);
+//   dff_if vif();
 
-   assign vif.clk = clk;
+   // assign vif.clk = clk;
    assign vif.rst = rst;
 
     dff dut (.clk(vif.clk), .rst(vif.rst), .din(vif.din), .dout(vif.dout));

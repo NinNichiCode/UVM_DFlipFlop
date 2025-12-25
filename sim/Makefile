@@ -21,7 +21,8 @@ regress:
 	@mkdir -p logs
 	@mkdir -p cov
 	@for t in $(TESTS); do \
-	vsim -c -coverage top +UVM_TESTNAME=$$t -voptargs="+acc" -l logs/$$t.log -do " coverage save -onexit cov/$$t.ucdb; run -all; quit"; \
+	vsim -c -coverage top +UVM_TESTNAME=$$t -voptargs="+acc" -assertdebug -l logs/$$t.log \
+	-do "coverage save -onexit cov/$$t.ucdb; run -all; quit"; \
 	done
 
 coverage:

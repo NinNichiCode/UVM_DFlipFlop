@@ -786,5 +786,26 @@ Covergroup                                             Metric       Goal    Stat
 
 TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
 
+DIRECTIVE COVERAGE:
+---------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Count Status    
+                                         Unit   UnitType                                      
+---------------------------------------------------------------------------------------------
+/top/vif/COVER_RESET                     dff_if Verilog  SVA  ../tb/dff_if.sv(40)
+                                                                                  6 Covered   
+/top/vif/COVER_DATA                      dff_if Verilog  SVA  ../tb/dff_if.sv(41)
+                                                                                302 Covered   
+
+TOTAL DIRECTIVE COVERAGE: 100.00%  COVERS: 2
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass     Vacuous    Disable    Attempt     Active Peak Active ATV
+                                                  Count        Count    Count      Count      Count       Count  Count          
+--------------------------------------------------------------------------------------------------------------------------------
+/top/vif/ASSERT_RESET
+                     ../tb/dff_if.sv(33)                0          6        304          0        310          0           2 off
+/top/vif/ASSERT_DATA ../tb/dff_if.sv(36)                0        302          0          7        310          1           2 off
+
 Total Coverage By File (code coverage only, filtered view): 46.40%
 

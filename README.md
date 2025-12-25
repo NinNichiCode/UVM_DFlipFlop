@@ -5,5 +5,6 @@ Verify for D Flip Flop
 
 + Coverage report
 
-<img width="559" height="234" alt="image" src="https://github.com/user-attachments/assets/76a647bb-9fd8-4a13-918e-07483d7444b3" />
+<img width="551" height="278" alt="image" src="https://github.com/user-attachments/assets/398647bf-48e4-48f5-9ad7-56c293556581" />
+
 
